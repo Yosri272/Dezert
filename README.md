@@ -1,91 +1,89 @@
-Android Signup App – Frontend
-A simple Android application that displays a user signup form and sends the data to a Laravel API using the Volley library.
 
-📱 Project Description
-This is a frontend mobile app for user registration. The user fills in their details, and the app sends the data to a Laravel API. The app shows a success or error message based on the server's response.
+# Android Signup App – Frontend
 
-🛠️ Features
-Simple and user-friendly signup form.
+A simple Android application that provides a user registration form and connects to a Laravel API using the Volley library.
 
-Basic input validation before submission.
+## 📱 Project Overview
 
-Uses Volley for HTTP POST requests.
+This app allows users to sign up by filling out a registration form. The form data is sent to a Laravel-based backend API using an HTTP POST request through the Volley library. The app then displays a success or error message based on the server’s response.
 
-Connects to a Laravel backend API.
+## 🧾 Form Fields
 
-Displays success or error message based on API response.
+- `name` – Full Name  
+- `email` – Email Address  
+- `password` – Password  
+- `password_confirmation` – Confirm Password  
 
-🧾 Signup Form Fields
-The form includes the following fields:
+## 📡 API Endpoint
 
-name – Full Name
-
-email – Email Address
-
-password – Password
-
-password_confirmation – Confirm Password
-
-🚀 How It Works
-User opens the app and fills out the signup form.
-
-Inputs are validated locally.
-
-Data is sent using Volley via a POST request.
-
-The Laravel API processes the request.
-
-The app displays a success or error message based on the response.
-
-📡 API Endpoint
-nginx
-Copy
-Edit
+```
 POST https://wepower.wepower.host/api/signup
-✅ Example Request (JSON):
-json
-Copy
-Edit
+```
+
+### Example Request Body:
+
+```json
 {
   "name": "John Doe",
   "email": "john@example.com",
   "password": "123456",
   "password_confirmation": "123456"
 }
-📬 Example Success Response:
-json
-Copy
-Edit
+```
+
+### Example Success Response:
+
+```json
 {
   "success": true,
   "message": "User registered successfully."
 }
-❌ Example Error Response:
-json
-Copy
-Edit
+```
+
+### Example Error Response:
+
+```json
 {
   "success": false,
   "errors": {
     "email": ["The email has already been taken."]
   }
 }
-🧰 Technologies Used
-Android Studio
+```
 
-Java or Kotlin
+## 🛠️ Features
 
-Volley – For HTTP networking
+- Simple and clean UI for signup
+- Local form validation
+- Integration with Laravel API using Volley
+- Success and error response handling
 
-Laravel – Backend API
+## 🧰 Technologies Used
 
-🛠️ How to Run the App
-Open the project in Android Studio.
+- Android Studio
+- Java or Kotlin
+- Volley HTTP Library
+- Laravel (Backend API)
 
-Make sure the device or emulator is connected to the internet.
+## 🚀 Getting Started
 
-(Optional) Update the API URL if needed.
+1. Clone or download this project.
+2. Open the project using Android Studio.
+3. Make sure your device or emulator has internet access.
+4. Build and run the application.
+5. Test the signup form by entering user data and submitting it.
 
-Run the app on a physical device or emulator.
+## 📂 Project Structure
 
-Try registering a new user through the form.
+```
+├── MainActivity.java
+├── Network/
+│   └── VolleySingleton.java
+├── res/
+│   └── layout/activity_main.xml
+```
+
+## 🔐 Notes
+
+- Ensure the API endpoint is reachable from your Android device or emulator.
+- If testing on an emulator, the endpoint must be accessible over the internet (not `localhost`).
