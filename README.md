@@ -24,10 +24,10 @@ POST https://wepower.wepower.host/api/signup
 
 ```json
 {
-  "name": "John Doe",
-  "email": "john@example.com",
+  "name": "Yosri",
+  "email": "Yosri@example.com",
   "password": "123456",
-  "password_confirmation": "123456"
+  
 }
 ```
 
